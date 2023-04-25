@@ -51,13 +51,27 @@ int un_number(unsigned int n)
 	unsigned int b;
 
 	a = 1;
-	length = 0;
 	b = n;
-	for (; a != 0;)
+	length = 0;
+	if (n == 0)
 	{
-		length = length + _putchar('0' + b / a);
-		b %= a;
-		a /= 10;
+		length += _putchar('0');
+	}
+	else
+	{
+		if ((int)n < 0)
+		{
+			length += _putchar('-');
+			b = -b;
+		}
+		for (; a <= (int)b / 10; a *= 10)
+		{
+			for (; a != 0; a /=10)
+			{
+				length += _putchar('0' + (b / a));
+				b %= a;
+			}
+		}
 	}
 	return (length);
 }

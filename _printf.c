@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 		{"s", is_string},
 		{"i", is_integer},
 		{"%", is_percent},
+		{"r", is_string},
 		{NULL, NULL},
 	};
 	va_list arg;
