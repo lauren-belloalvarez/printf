@@ -22,4 +22,5 @@ int is_char(va_list);
 int is_string(va_list arg);
 int is_percent(va_list);
 int is_integer(va_list);
+int is_binary(va_list arg);
 #endif
