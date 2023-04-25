@@ -2,61 +2,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdint.h>
 
 /**
  * _printf - prints inputs of functions
  *
  * @format: character string
  *
- * Return: number of characters printed excluding null byte at the end of strings
+ * Return: number of characters printed excluding null byte
  */
-
-/**
- * buffunc - will print buffer content
- *
- * @buffer: chars array
- * @y: index length
- *
- */
-
-void buffunc(char buffer[], int *y)
-{
-	if (y > 0)
-		write(1, &buffer[0], int *y)
-	*y = 0;
-}
 
 int _printf(const char *format, ...)
 {
-	int n, chars = 0, a = 0;
-	int y = 0, flag;
-	va_list x;
-	char buffer[buffersize];
+	int print;
 
-	va_start(x, format);
-	for (n = 0; format && format [n] != '\0'; n++)
-	{
-		if (format == NULL || format[n] == '%' && !format[n + 1])
-			return (-1);
-		if (format[n] != '%')
-		{
-			buffer[y++] = format[n];
-			if (y == buffersize)
-				buffunc(buffer,&y);
-			chars++;
-		}
-		else
-		{
-			buffunc(buffer, &y);
-			flag = get_flags(format, &n);
-			n++;
-			a = handle_print(format, &n, x, buffer, flag);
-			if (a == -1)
-				return (-1);
-			printed += a;
-		}
-	}
-	buffunc(buffer, &y);
-	va_end(x);
-	return (printed);
+	converted specs[] = {
+		{"c", is_char},
+		{"d", is_integer},
+		{"s", is_string},
+		{"i", is_integer},
+		{"%", is_percent},
+	};
+	va_list arg;
+
+	if (format == NULL)
+		return (-1);
+	va_start(arg, format);
+	print = specifiers(format, specs, arg);
+	va_end(arg);
+	return (print);
 }
