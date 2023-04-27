@@ -22,7 +22,7 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 		{'X', print_hexa_upper}, {'p', print_pointer}, {'S', print_non_printable},
 		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
 	};
-	for (i = 0; fmt_types[z].fmt != '\0'; z++)
+	for (z = 0; fmt_types[z].fmt != '\0'; z++)
 		if (fmt[*ind] == fmt_types[z].fmt)
 			return (fmt_types[z].fn(list, buffer, flags, width, precision, size));
 
