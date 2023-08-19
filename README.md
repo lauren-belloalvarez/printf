@@ -13,18 +13,18 @@ Our `printf` function supports various format specifiers, such as:
 
 Through these format specifiers, users can craft detailed and customized outputs based on their requirements.
 
-## How to start it
+### How to Start it
 
 These instructions will get you a copy of the project up and running on your local machine (Linux distro) for development and testing purposes.
 
-## Installing
+### Installing
 
 You will need to clone the repository of the project. This will contain the `printf` function and all of its dependencies.
 
 ```
 git clone https://github.com/lauren-belloalvarez/printf.git
 ```
-## How to Use
+### How to Use it
 
 To use our custom `printf` function:
 
@@ -41,7 +41,7 @@ int main(void)
     return (0);
 }
 ```
-## Arguments
+### Arguments
 
 Most format specifiers have specific requirements for their associated arguments. Ensure the argument passed matches the expected data type for the format specifier.
 
