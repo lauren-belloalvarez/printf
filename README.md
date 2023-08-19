@@ -1,30 +1,58 @@
-# Project: 0x11. C - printf
+# 0x11. C - printf
 
-## Resources
+## Project Description
+This is a custom implementation of the famous `printf` function found in the C standard library. The project is designed to mirror the basic functionalities of the original function, allowing the user to format and print data to the standard output.
 
-#### Read or watch:
+## Functionality Overview
+Our `printf` function supports various format specifiers, such as:
 
-* [](https://intranet.alxswe.com/concepts/111)
-* [](https://intranet.alxswe.com/concepts/121)
-* [](https://intranet.alxswe.com/concepts/130)
-* [](https://intranet.alxswe.com/concepts/225)
-## Learning Objectives
+- %c: Character
+- %s: String
+- %d or %i: Integer
+- %b: Binary representation of an integer
 
-### General
+Through these format specifiers, users can craft detailed and customized outputs based on their requirements.
 
-* Allowed editors: vi, vim, emacs
-* All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
-* All your files should end with a new line
-* A README.md file, at the root of the folder of the project is mandatory
-* Your code should use the Betty style. It will be checked using betty-style.pl and betty-doc.pl
-* You are not allowed to use global variables
-* No more than 5 functions per file
-* In the following examples, the main.c files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own main.c files at compilation. Our main.c files might be different from the one shown in the examples
-* The prototypes of all your functions should be included in your header file called main.h
-* Don’t forget to push your header file
-* All your header files should be include guarded
-* Note that we will not provide the _putchar function for this project
-## Tasks
+## How to start it
 
-| Task | File |
-| ---- | ---- |
+These instructions will get you a copy of the project up and running on your local machine (Linux distro) for development and testing purposes.
+
+## Installing
+
+You will need to clone the repository of the project. This will contain the `printf` function and all of its dependencies.
+
+```
+git clone https://github.com/lauren-belloalvarez/printf.git
+```
+## How to Use
+
+To use our custom `printf` function:
+
+1. Include the `main.h` header in your main program.
+2. Call the function `_printf` just like you would with the original `printf`.
+
+Example:
+```
+#include "main.h"
+
+int main(void)
+{
+    _printf("Hello, %s!", "World");
+    return (0);
+}
+```
+## Arguments
+
+Most format specifiers have specific requirements for their associated arguments. Ensure the argument passed matches the expected data type for the format specifier.
+
+Example:
+```
+_printf("This is a character: %c and this is a number: %d", 'A', 100);
+```
+
+
+## Authors
+
+- Lauren Bello Alvarez
+
+- [Emmanuel Oyibo](https://github.com/Emminex23)
