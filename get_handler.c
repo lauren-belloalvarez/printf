@@ -17,7 +17,8 @@ int (*get_handler(char spec))(va_list)
 	{'s', print_str},
 	{'%', print_percent},
 	{'i', print_int},
-	{'d', print_int}
+	{'d', print_int},
+	{0, NULL}
 	};
 
 	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
