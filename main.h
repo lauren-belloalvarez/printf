@@ -26,7 +26,8 @@ int print_int(va_list items);
  * specifier formats
  */
 
-typedef struct fmt {
+typedef struct fmt
+{
 
 	char spec;
 	int (*hdler)(va_list);
